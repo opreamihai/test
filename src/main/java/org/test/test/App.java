@@ -57,6 +57,8 @@ public class App extends javax.swing.JFrame {
 		openMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
 				java.awt.event.KeyEvent.VK_O,
 				java.awt.event.InputEvent.CTRL_MASK));
+		openMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource(
+				"/javax/swing/plaf/metal/icons/ocean/directory.gif"))); // NOI18N
 		openMenuItem.setText("Open");
 		openMenuItem.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,12 +67,29 @@ public class App extends javax.swing.JFrame {
 		});
 		fileMenu.add(openMenuItem);
 
+		saveMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+				java.awt.event.KeyEvent.VK_S,
+				java.awt.event.InputEvent.CTRL_MASK));
+		saveMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource(
+				"/javax/swing/plaf/metal/icons/ocean/floppy.gif"))); // NOI18N
 		saveMenuItem.setText("Save");
 		fileMenu.add(saveMenuItem);
 
+		saveAsMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+				java.awt.event.KeyEvent.VK_S,
+				java.awt.event.InputEvent.SHIFT_MASK
+						| java.awt.event.InputEvent.CTRL_MASK));
+		saveAsMenuItem
+				.setIcon(new javax.swing.ImageIcon(getClass().getResource(
+						"/javax/swing/plaf/metal/icons/ocean/floppy.gif"))); // NOI18N
 		saveAsMenuItem.setText("Save As ...");
 		fileMenu.add(saveAsMenuItem);
 
+		exitMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+				java.awt.event.KeyEvent.VK_W,
+				java.awt.event.InputEvent.CTRL_MASK));
+		exitMenuItem.setIcon(new javax.swing.ImageIcon(getClass().getResource(
+				"/javax/swing/plaf/metal/icons/ocean/close.gif"))); // NOI18N
 		exitMenuItem.setText("Exit");
 		exitMenuItem.addActionListener(new java.awt.event.ActionListener() {
 			public void actionPerformed(java.awt.event.ActionEvent evt) {
