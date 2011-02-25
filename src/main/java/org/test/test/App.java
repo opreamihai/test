@@ -6,6 +6,8 @@
 
 package org.test.test;
 
+import javax.swing.UIManager;
+
 /**
  *
  * @author  __USER__
@@ -26,6 +28,7 @@ public class App extends javax.swing.JFrame {
 	// <editor-fold defaultstate="collapsed" desc="Generated Code">
 	private void initComponents() {
 
+		jFileChooser1 = new javax.swing.JFileChooser();
 		menuBar = new javax.swing.JMenuBar();
 		fileMenu = new javax.swing.JMenu();
 		openMenuItem = new javax.swing.JMenuItem();
@@ -41,11 +44,25 @@ public class App extends javax.swing.JFrame {
 		contentsMenuItem = new javax.swing.JMenuItem();
 		aboutMenuItem = new javax.swing.JMenuItem();
 
+		jFileChooser1.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				jFileChooser1ActionPerformed(evt);
+			}
+		});
+
 		setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
 		fileMenu.setText("File");
 
+		openMenuItem.setAccelerator(javax.swing.KeyStroke.getKeyStroke(
+				java.awt.event.KeyEvent.VK_O,
+				java.awt.event.InputEvent.CTRL_MASK));
 		openMenuItem.setText("Open");
+		openMenuItem.addActionListener(new java.awt.event.ActionListener() {
+			public void actionPerformed(java.awt.event.ActionEvent evt) {
+				openMenuItemActionPerformed(evt);
+			}
+		});
 		fileMenu.add(openMenuItem);
 
 		saveMenuItem.setText("Save");
@@ -106,6 +123,19 @@ public class App extends javax.swing.JFrame {
 	}// </editor-fold>
 	//GEN-END:initComponents
 
+	private void jFileChooser1ActionPerformed(java.awt.event.ActionEvent evt) {
+		if (evt.getActionCommand().equals("CancelSelection")) {
+			System.out.println("CANCEL");
+		}
+		if (evt.getActionCommand().equals("ApproveSelection")) {
+			System.out.println("OK");
+		}
+	}
+
+	private void openMenuItemActionPerformed(java.awt.event.ActionEvent evt) {
+		jFileChooser1.showOpenDialog(this);
+	}
+
 	private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
 		System.exit(0);
 	}//GEN-LAST:event_exitMenuItemActionPerformed
@@ -116,6 +146,11 @@ public class App extends javax.swing.JFrame {
 	public static void main(String args[]) {
 		java.awt.EventQueue.invokeLater(new Runnable() {
 			public void run() {
+				try {
+					UIManager.setLookAndFeel(UIManager
+							.getSystemLookAndFeelClassName());
+				} catch (Exception e) {
+				}
 				new App().setVisible(true);
 			}
 		});
@@ -132,6 +167,7 @@ public class App extends javax.swing.JFrame {
 	private javax.swing.JMenuItem exitMenuItem;
 	private javax.swing.JMenu fileMenu;
 	private javax.swing.JMenu helpMenu;
+	private javax.swing.JFileChooser jFileChooser1;
 	private javax.swing.JMenuBar menuBar;
 	private javax.swing.JMenuItem openMenuItem;
 	private javax.swing.JMenuItem pasteMenuItem;
